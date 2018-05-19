@@ -1,6 +1,6 @@
 import pytest
 
-from fetch import fetch_currency, get_latest_rate, multi_fetch
+from .fetch import fetch_currency, get_latest_rate, multi_fetch
 
 
 def test_fetch_usd_successful():

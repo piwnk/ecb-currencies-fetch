@@ -1,6 +1,6 @@
 import pytest
 
-from currencies import get_currencies
+from .currencies import get_currencies
 
 
 def test_get_currencies():
