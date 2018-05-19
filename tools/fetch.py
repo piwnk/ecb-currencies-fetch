@@ -11,8 +11,9 @@ def fetch_currency(currency_code):
     return feedparser.parse(URL_TEMPLATE.format(currency_code.lower()))
 
 
-def get_latest_rate(currency_parsed):
-    latest = currency_parsed['entries'][0]
+def get_latest_rate(currency_code):
+    fetch_result = fetch_currency(currency_code)
+    latest = fetch_result['entries'][0]
     return {
         "currency": latest['cb_targetcurrency'],
         "rate": float(latest['cb_exchangerate'].split()[0]),
@@ -20,11 +21,11 @@ def get_latest_rate(currency_parsed):
     }
 
 
-def multiprocessing_fetch():
+def multi_fetch():
     currencies = [code for code in get_currencies().keys()]
     pool = Pool(processes=4)
 
-    result = pool.map(fetch_currency, currencies)
+    result = pool.map(get_latest_rate, currencies)
 
     pool.close()
     pool.join()

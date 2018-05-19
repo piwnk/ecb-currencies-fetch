@@ -1,6 +1,6 @@
 import pytest
 
-from fetch import fetch_currency, get_latest_rate, multiprocessing_fetch
+from fetch import fetch_currency, get_latest_rate, multi_fetch
 
 
 def test_fetch_usd_successful():
@@ -9,8 +9,8 @@ def test_fetch_usd_successful():
 
 
 def test_fetch_result_contains_rate():
-    result = fetch_currency('usd')
-    latest = get_latest_rate(result)
+    # result = fetch_currency('usd')
+    latest = get_latest_rate('usd')
     assert isinstance(latest, dict)
     assert 'rate' in latest.keys()
     assert isinstance(latest['rate'], float)
@@ -19,8 +19,14 @@ def test_fetch_result_contains_rate():
 
 @pytest.fixture()
 def currencies():
-    return multiprocessing_fetch()
+    return multi_fetch()
 
-def test_multiprocessing_result_is_a_list(currencies):
+def test_multifetched_currencies_is_a_list(currencies):
     assert isinstance(currencies, list)
 
+
+def test_multifetched_currencies_contains_usd_rate(currencies):
+    usd_details = [cur for cur in currencies if cur['currency'] == 'USD']    # usd_rate = usd_details[0]['rate']
+    assert usd_details
+    assert usd_details[0].get('rate')
+    assert isinstance(usd_details[0].get('rate'), float)
