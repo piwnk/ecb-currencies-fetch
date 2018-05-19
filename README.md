@@ -1,0 +1,1 @@
+# ecb-currencies-fetch
