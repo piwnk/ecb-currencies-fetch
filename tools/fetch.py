@@ -1,8 +1,7 @@
 import feedparser
-
 from multiprocessing import Pool
 
-from currencies import get_currencies
+from .currencies import get_currencies
 
 URL_TEMPLATE = "https://www.ecb.europa.eu/rss/fxref-{}.html"
 
