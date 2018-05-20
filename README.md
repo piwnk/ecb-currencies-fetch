@@ -16,9 +16,19 @@
 1. django app with rest endpoint configured at localhost:8000/api/currencies to fetch data from db.sqlite3
 
 # launch instructions
+
+1.  initialize virtualenv
+
+```
+pipenv install
+```
+
 1.  django app with rest endpoint at localhost:8000/api/currencies returning rows from db.sqlite3
 
 ```
+python rest/manage.py makemigrations
+python rest/manage.py migrate
+python rest/manage.py createsuperuser
 python rest/manage.py runserver
 ```
 
