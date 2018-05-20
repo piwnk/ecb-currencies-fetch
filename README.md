@@ -37,14 +37,14 @@ python rest/manage.py createsuperuser
 python rest/manage.py runserver
 ```
 
-4.  flask app with rest endpoint at localhost:5000/api/currencies fetching RSS on demand
-
-```
-python tools/fetch_ondemand_api.py
-```
-
-5. run scheduler
+4. run scheduler
 
 ```
 python tools/task.py
+```
+
+5.  flask app with rest endpoint at localhost:5000/api/currencies fetching RSS on demand
+
+```
+python tools/fetch_ondemand_api.py
 ```
