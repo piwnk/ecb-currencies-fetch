@@ -7,9 +7,6 @@ CONN_STRING = 'sqlite:///rest/db.sqlite3'
 
 def job():
     try:
-        # result = multi_fetch()
-        # print(result[0])
-
         connection = connect(CONN_STRING)
         insert_rates(connection)
         print('Fresh data fetched at {}'.format(datetime.now()))
