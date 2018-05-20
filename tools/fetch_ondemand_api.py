@@ -1,7 +1,7 @@
 from flask import Flask
 import json
 
-from tools.fetch import multi_fetch
+from fetch import multi_fetch
 
 app = Flask(__name__)
 

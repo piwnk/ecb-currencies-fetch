@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, MetaData, Table, Column, String, Float, Da
 from sqlalchemy.sql import bindparam
 from dateutil import parser as date_parser
 
-from tools.fetch import multi_fetch
+from fetch import multi_fetch
 
 
 def connect(conn_string):
