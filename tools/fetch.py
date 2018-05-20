@@ -1,6 +1,6 @@
 import feedparser
 from multiprocessing import Pool
-from dateutil import parser as date_parser
+# from dateutil import parser as date_parser
 
 from tools.currencies import get_currencies
 
@@ -17,7 +17,8 @@ def get_latest_rate(currency_code):
     return {
         "name": latest['cb_targetcurrency'],
         "rate": float(latest['cb_exchangerate'].split()[0]),
-        "updated": date_parser.parse(latest['updated'])
+        # "updated": date_parser.parse(latest['updated'])
+        "updated": latest['updated']
     }
 
 
