@@ -20,7 +20,7 @@
 1.  initialize virtualenv
 
 ```
-pipenv install
+pipenv install --three
 ```
 
 1.  django app with rest endpoint at localhost:8000/api/currencies returning rows from db.sqlite3
