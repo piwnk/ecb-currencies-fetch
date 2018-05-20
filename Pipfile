@@ -9,6 +9,7 @@ flask = "*"
 schedule = "*"
 django = "*"
 djangorestframework = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 

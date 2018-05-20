@@ -1,7 +1,8 @@
 import feedparser
 from multiprocessing import Pool
+from dateutil import parser as date_parser
 
-from .currencies import get_currencies
+from tools.currencies import get_currencies
 
 URL_TEMPLATE = "https://www.ecb.europa.eu/rss/fxref-{}.html"
 
@@ -14,9 +15,9 @@ def get_latest_rate(currency_code):
     fetch_result = fetch_currency(currency_code)
     latest = fetch_result['entries'][0]
     return {
-        "currency": latest['cb_targetcurrency'],
+        "name": latest['cb_targetcurrency'],
         "rate": float(latest['cb_exchangerate'].split()[0]),
-        "updated": latest['updated']
+        "updated": date_parser.parse(latest['updated'])
     }
 
 

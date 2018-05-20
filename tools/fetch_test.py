@@ -9,7 +9,6 @@ def test_fetch_usd_successful():
 
 
 def test_fetch_result_contains_rate():
-    # result = fetch_currency('usd')
     latest = get_latest_rate('usd')
     assert isinstance(latest, dict)
     assert 'rate' in latest.keys()
@@ -26,7 +25,7 @@ def test_multifetched_currencies_is_a_list(currencies):
 
 
 def test_multifetched_currencies_contains_usd_rate(currencies):
-    usd_details = [cur for cur in currencies if cur['currency'] == 'USD']    # usd_rate = usd_details[0]['rate']
+    usd_details = [cur for cur in currencies if cur['name'] == 'USD']
     assert usd_details
     assert usd_details[0].get('rate')
     assert isinstance(usd_details[0].get('rate'), float)
