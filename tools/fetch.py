@@ -2,7 +2,7 @@ import feedparser
 from multiprocessing import Pool
 # from dateutil import parser as date_parser
 
-from currencies import get_currencies
+from tools.currencies import get_currencies
 
 URL_TEMPLATE = "https://www.ecb.europa.eu/rss/fxref-{}.html"
 

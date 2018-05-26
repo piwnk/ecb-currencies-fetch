@@ -4,5 +4,5 @@
         "tools"
     ],
     "python.unitTest.pyTestEnabled": true,
-    "python.pythonPath": "C:\\Users\\piotr\\.virtualenvs\\ecb-currencies-fetch-LH2N2lxc\\scripts\\python.exe"
+    "python.pythonPath": "/home/piotrek/.local/share/virtualenvs/ecb-currencies-fetch-W15BFhkt/bin/python"
 }

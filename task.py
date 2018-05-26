@@ -1,6 +1,6 @@
 import schedule
-from fetch import multi_fetch
-from db import insert_rates, connect
+from tools.fetch import multi_fetch
+from tools.db import insert_rates, connect
 from datetime import datetime
 
 CONN_STRING = 'sqlite:///rest/db.sqlite3'
